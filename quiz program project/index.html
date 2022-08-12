@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz program</title>
+    <link rel="stylesheet" href="./tailwind.css">
+</head>
+<body>
+    <h1 class="text-6xl text-center bg-blue-500 p-5 text-white">quiz program </h1>
+    <div class="container lg:ml-10 p-5 ">
+        <div class="list-question p-3 border mb-5">
+
+            <p>1.<input type="text" id="inp" class="border-b focus-within:outline-none border-black">
+            is the indian capital in india 
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5">
+
+            <p>2.<input type="text" id="inp" class="border-b focus-within:outline-none border-black">
+                 is the biggest animal in the sea?
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5">
+
+            <p>3.<input type="text" id="inp" class="border-b focus-within:outline-none border-black">
+                 is answer of 12+13?
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5 ">
+
+            <p>4.<input type="text" id="inp" class="border-b  focus-within:outline-none border-black">
+                ocean is the biggest ocean?
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5 ">
+
+            <p>5.<input type="text" id="inp" class="border-b  focus-within:outline-none  border-black">
+                 is your teeth colour?
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5 ">
+
+            <p>6.<input type="text" id="inp" class="border-b focus-within:outline-none  border-black">
+                we are all human?
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5 ">
+
+            <p>7.<input type="text" id="inp" class="border-b focus-within:outline-none  border-black">
+                 is the colour of apple?
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5 ">
+
+            <p>8.<input type="text" id="inp" class="border-b focus-within:outline-none  border-black">
+                 is the colour of sky
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5 ">
+
+            <p>9.<input type="text" id="inp" class="border-b focus-within:outline-none  border-black">
+                 is the colour of sea water?
+            </p>
+        </div>
+        <div class="list-question p-3 border mb-5 ">
+
+            <p>10.<input type="text" id="inp" class="border-b focus-within:outline-none  border-black">
+                 is the capital of tamilnadu?
+            </p>
+        </div>
+     <button class="px-3 py-2 bg-yellow-500 text-white" id="btn">click here</button>
+    </div>
+    <div class="p-3 bg-blue-500 pb-3 mb-3">
+        <p class="text-white text-4xl">score:<p id="scoremark" class="text-white text-4xl"></p><p class="text-white text-6xl">/10</p></p>
+    </div>
+     <div class="p-3 bg-red-500 pb-3 mb-3">
+        <p class="text-white text-4xl">mistake score:<p id="mistakemark" class="text-white text-4xl"></p><p class="text-white text-6xl">/10</p></p>
+    </div>
+</body>
+<script>
+    var i;
+    var count=0;
+    var scoremark=document.getElementById('scoremark');
+     var mistakemark=document.getElementById('mistakemark');
+    let inp=document.querySelectorAll('#inp');
+    let btn=document.getElementById('btn');
+    var score=0;
+    var mistake=0;
+   
+    // edit the word in correct_answer // the project is ready only fill up the question and answer  alone.  
+    var correct_answer=['went','delhi','whale','25','pacific','white','yes','red','blue','blue','chennai'];
+ //   console.log(correct_answer.length);
+ btn.onclick=()=>{
+
+    for( i=0;i< inp.length; i++){
+if(inp[i].value==""|| inp[i].value==null){
+ //console.log(i);
+ inp[i].classList.replace('border-black','border-red-500');
+
+
+}
+
+else{
+    inp[i].classList.replace('border-red-500','border-black');
+// console.log(i);
+count++
+ 
+}
+
+ checking();
+
+
+ }
+
+ }
+ function checking() {
+     if(count==9){
+   // alert('done')
+  for(var j=0; j<inp.length ;j++){
+  //  console.log(j)
+ var dom= i;
+    if(inp[j].value.toLocaleLowerCase()==correct_answer[j+1].toLocaleLowerCase()){
+    score++;
+   // alert(correct_answer[j]);
+    }
+    else{
+      
+            mistake++
+        
+
+    }
+  }
+ // alert('score:'+score);
+ // alert('mistake:'+mistake);
+scoremark.innerHTML=score;
+mistakemark.innerHTML=mistake;
+ }
+
+ }
+</script>
+
+</html>
